@@ -18,4 +18,10 @@ This is the one we use in our [glotpress site](http://translate.osclass.org/).
 
 ## Clone project
 
-Clone an existing project (and subprojects) into a new one, very useful since GlotPress doesn't merge new and known strings. This plugins HAVE TO be used with this version of GlotPress [conejoninja/glotpress](https://github.com/conejoninja/glotpress) since it requires a hook on a template (to add the option).
+Clone an existing project (and subprojects) into a new one, very useful since GlotPress doesn't merge new and known strings. This plugin HAVE TO be used with this version of GlotPress [conejoninja/glotpress](https://github.com/conejoninja/glotpress) since it requires a hook on a template (to add the option).
+
+## Export project
+
+This plugin will ad a new option to export the project into a zip package ready to install it as a language in Osclass. This plugin HAVE TO be used with this version of GlotPress [conejoninja/glotpress](https://github.com/conejoninja/glotpress) since it requires a hook on a template (to add the option). The hook needed is "subprojects_menu_item", add this line into gp-templates/project.php around line 63:
+
+	<?php do_action("subprojects_menu_item", $sub_project); ?>
