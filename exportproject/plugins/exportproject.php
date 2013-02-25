@@ -131,7 +131,7 @@ $template = '<?php'.PHP_EOL.
 '         \'name\'            => \''.$tset->name.'\''.PHP_EOL.
 '        ,\'short_name\'      => \''.preg_replace('| \((.+)\)|', '', $tset->name).'\''.PHP_EOL.
 '        ,\'description\'     => \''.$tset->name.' translation\''.PHP_EOL.
-'        ,\'version\'         => \''.$project->name.'\''.PHP_EOL.
+'        ,\'version\'         => \''.str_ireplace("x", "0", $project->name).'\''.PHP_EOL.
 '        ,\'author_name\'     => \'Osclass\''.PHP_EOL.
 '        ,\'author_url\'      => \'http://osclass.org/\''.PHP_EOL.
 '        ,\'currency_format\' => \'{NUMBER} {CURRENCY}\''.PHP_EOL.
@@ -231,7 +231,42 @@ $template = '<?php'.PHP_EOL.
     static function fixLocale($locale) {
         $tmp = explode("-", $locale);
         if(count($tmp)==1) {
-            return strtolower($tmp[0])."_".strtoupper($tmp[0]);
+            $country = strtoupper($tmp[0]);
+            switch($country) {
+                case 'CA':
+                    $country = 'ES';
+                    break;
+                case 'CS':
+                    $country = 'CZ';
+                    break;
+                case 'DA':
+                    $country = 'DK';
+                    break;
+                case 'VI':
+                    $country = 'VN';
+                    break;
+                case 'FA':
+                    $country = 'IR';
+                    break;
+                case 'SV':
+                    $country = 'SE';
+                    break;
+                case 'EL':
+                    $country = 'GR';
+                    break;
+                case 'ZH':
+                    $country = 'CN';
+                    break;
+                case 'AR':
+                    $country = 'SY';
+                    break;
+                case 'EN':
+                    $country = 'US';
+                    break;
+                default:
+                    break;
+            }
+            return strtolower($tmp[0])."_".$country;
         }
         return strtolower($tmp[0])."_".strtoupper($tmp[1]);
     }
