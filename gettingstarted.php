@@ -41,7 +41,7 @@ function getting_started_page() {
     echo '<p>';
     _e('GlotPress is organized in projects and subprojects. You can find three major projects:', 'gettingstarted');
     echo '<ul>';
-    echo '<li>' . __('<strong>Osclass</strong>: Every version of Osclass has its own subprojects, starting from the 2.1.x till 3.0.x. We have also created a "version in development" in order to minimize the time gap between a launch of new version and its availability in each language. Every subproject with different version of Osclass is divided into four parts: modern theme, flash messages, core and email templates.', 'gettingstarted') . '</li>';
+    echo '<li>' . __('<strong>Osclass</strong>: Every version of Osclass has its own subprojects, starting from the 2.1.x till 3.1.x. We have also created a "version in development" in order to minimize the time gap between a launch of new version and its availability in each language. Every subproject with different version of Osclass is divided into four parts: modern theme, flash messages, core and email templates.', 'gettingstarted') . '</li>';
     echo '<li>' . __('<strong>Plugins</strong>: There is a subproject for each plugin and every plugin can have its subprojects for each version of Osclass. The plugins available for translations are only those listed on <a href="http://market.osclass.org/">market.osclass.org</a>', 'gettingstarted') . '</li>';
     echo '<li>' . __('<strong>Themes</strong>: There is a subproject for each theme and every theme can have its subprojects for each version of Osclass. The themes available for translations are only those listed on <a href="http://market.osclass.org/">market.osclass.org</a>.', 'gettingstarted') . '</li>';
     echo '</ul>';
