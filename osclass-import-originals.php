@@ -18,7 +18,7 @@
     system("cd i18n-tools; php makepot.php messages ../Osclass tmp/messages.po; echo $?", $rv);
     if($rv!=0) { echo "CRON FAILED (makepot)"; exit; };
 
-    system("cd i18n-tools; php makepot.php theme ../Osclass/oc-content/themes/modern tmp/theme.po; echo $?", $rv);
+    system("cd i18n-tools; php makepot.php theme ../Osclass/oc-content/themes/bender tmp/theme.po; echo $?", $rv);
     if($rv!=0) { echo "CRON FAILED (makepot)"; exit; };
 
     system("cd i18n-tools; php makepot.php mail ../Osclass/oc-content/languages/en_US tmp/mail.po; echo $?", $rv);
@@ -33,7 +33,7 @@
     system("php import-originals.php -p osclass/dev/email-templates -f i18n-tools/tmp/mail.po; echo $?", $rv);
     if($rv!=0) { echo "CRON FAILED (import email-templates)"; exit; };
 
-    system("php import-originals.php -p osclass/dev/modern -f i18n-tools/tmp/theme.po; echo $?", $rv);
+    system("php import-originals.php -p osclass/dev/bender -f i18n-tools/tmp/theme.po; echo $?", $rv);
     if($rv!=0) { echo "CRON FAILED (import modern)"; exit; };
 
 ?>

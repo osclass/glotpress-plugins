@@ -15,7 +15,7 @@ class Export_Project extends GP_Plugin {
     function after_request() { }
 
     function subprojects_menu_item($project) {
-        if(stripos($project->path, 'core')===false && stripos($project->path, 'modern')===false && stripos($project->path, 'flash-messages')===false && stripos($project->path, 'email-templates')===false) {
+        if(stripos($project->path, 'core')===false && stripos($project->path, 'modern')===false &&  stripos($project->path, 'bender')===false && stripos($project->path, 'flash-messages')===false && stripos($project->path, 'email-templates')===false) {
             echo '<span id="prj_'.$project->id.'" style="font-size:0.7em;">';
             echo gp_link( gp_url(
                         '/fullexport'
@@ -72,7 +72,7 @@ class Export_Project extends GP_Plugin {
                 $filename = $path."core.mo";
                 $lines = self::POGetLines('MO', $project, $locale, $filename);
             }
-            if($project->slug=='modern') {
+            if($project->slug=='modern' || $project->slug=='bender') {
                 $filename = $path."theme.po";
                 $lines = self::POGetLines('PO', $project, $locale, $filename);
                 $filename = $path."theme.mo";
