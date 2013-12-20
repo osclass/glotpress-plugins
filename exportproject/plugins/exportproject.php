@@ -85,7 +85,7 @@ class Export_Project extends GP_Plugin {
                 $lines = self::POGetLines('MO', $project, $locale, $filename);
             }
             if($project->slug=='email-templates') {
-                $lines = self::POGetLines($project, $locale, null);
+                $lines = self::POGetLines('PO', $project, $locale, null);
                 $template = file_get_contents(dirname(__FILE__)."/tmp/template_mail.sql");
                 foreach($lines as $line) {
                     $template = str_replace($line->singular, @$line->translations[0], $template);
