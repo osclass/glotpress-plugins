@@ -245,6 +245,9 @@ $template = '<?php'.PHP_EOL.
                 case 'VI':
                     $country = 'VN';
                     break;
+                case 'JA':
+                    $country = 'JP';
+                    break;
                 case 'FA':
                     $country = 'IR';
                     break;
